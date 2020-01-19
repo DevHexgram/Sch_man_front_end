@@ -1,11 +1,13 @@
 <template>
   <div class="my_body">
+    <img src="https://i.loli.net/2020/01/20/pvfW7yUiwCb4qh6.png" style="width:200px; height:200px; border-radius:50%;">
+    <p>快和我签订契约嘤~</p>
     <form @submit="regist()">
       <div class="input-group">
         <input
           v-model="username"
           type="text"
-          class="form-control"
+          class="my_input"
           placeholder="用户名"
           aria-describedby="basic-addon1"
           required
@@ -15,7 +17,7 @@
         <input
           v-model="password"
           type="password"
-          class="form-control"
+          class="my_input"
           placeholder="密码"
           aria-describedby="basic-addon1"
           required
@@ -25,19 +27,21 @@
         <input
           v-model="code"
           type="text"
-          class="form-control"
+          class="my_input"
           placeholder="邀请码"
           aria-describedby="basic-addon1"
           required
         />
       </div>
       <div class="btn-group">
-        <button type="submit" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
-          戳我注册
-          <span class="caret"></span>
+        <button type="submit" class="btn btn-success" aria-haspopup="true" aria-expanded="false" style="margin-top: 10px">
+          签订契约(
         </button>
       </div>
     </form>
+    <div class="my_bottom">
+    <p v-on:click="goToLogin">回去登录</p>
+    </div>
   </div>
 </template>
 
@@ -68,6 +72,9 @@ export default {
                 this.$router.push('/')
         } catch (e) {
         }
+    },
+    goToLogin() {
+      this.$router.push("/")
     }
   },
 };

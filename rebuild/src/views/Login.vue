@@ -1,11 +1,12 @@
 <template>
   <div class="my_body">
+    <img src="https://i.loli.net/2020/01/20/pvfW7yUiwCb4qh6.png" style="width:200px; height:200px; border-radius:50%;">
     <form @submit="auth()">
       <div class="input-group">
         <input
           v-model="username"
           type="text"
-          class="form-control"
+          class="my_input"
           placeholder="用户名"
           aria-describedby="basic-addon1"
           required
@@ -15,22 +16,18 @@
         <input
           v-model="password"
           type="password"
-          class="form-control"
+          class="my_input"
           placeholder="密码"
           aria-describedby="basic-addon1"
           required
         />
       </div>
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" aria-haspopup="true" aria-expanded="false">
-          戳我登录
-        </button>
-        <p>没有账号？</p>
-        <button @click="goToRegist" class="btn btn-primary" aria-haspopup="true" aria-expanded="false">
-          戳我注册
-        </button>
-      </div>
+      <button type="submit" class="circle_button" aria-haspopup="true" aria-expanded="false">GO</button>
     </form>
+    <div class="my_bottom">
+      <p>没有账号？</p>
+      <p @click="goToRegist" class aria-haspopup="true" aria-expanded="false">戳我注册</p>
+    </div>
   </div>
 </template>
 
@@ -66,22 +63,61 @@ export default {
           );
           const token1 = res.data;
           localStorage.setItem("token", token1);
-          console.log(token1)
           this.$router.push("/home");
         } catch (e) {}
       }
     },
     goToRegist() {
-      this.$router.push("/regist")
+      this.$router.push("/regist");
     }
   }
 };
 </script>
 
 <style>
+p {
+  font-size: 2px
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20%;
+}
 .login {
   display: flex;
   margin: 0px;
   align-content: center;
+}
+.my_body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.my_input {
+  border-radius: 20px;
+  border: solid 1px #ced4da;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  margin: 0.2rem 0rem;
+}
+.circle_button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: #66ccff;
+  font-size: 10px;
+  color: gray;
+  margin-top: 10px;
+}
+.my_bottom {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 </style>

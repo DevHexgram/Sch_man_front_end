@@ -22,6 +22,12 @@
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-router": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "github-markdown-css": "^3.0.1",
+    "highlight.js": "^9.18.0",
+    "text-loader": "0.0.1",
+    "vue-loader": "^15.8.3",
+    "vue-markdown": "^2.2.4",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-template-compiler": "^2.6.11"
   }
 }

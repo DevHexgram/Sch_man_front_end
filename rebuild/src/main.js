@@ -5,6 +5,7 @@ import '@vant/touch-emulator';
 import { Tab, Tabs,SwipeCell, Cell, CellGroup,Button,Overlay,Icon,Sticky,Popup,Field,Row,Col,DatetimePicker } from 'vant';
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/js/bootstrap.min'
+// import $ from 'jquery'
 
 Vue.config.productionTip = false
 

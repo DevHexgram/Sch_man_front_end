@@ -65,11 +65,12 @@ export default {
             const {data: res} = await ApiInstance.post(baseURL + '/auth/register',
                 {username: this.username, password: this.password, code: this.code}
                 )
-                const token = res.data
+                const token = res.data.token
                 //console.log(token)
                 localStorage.setItem("token",token)
                 alert("注册成功")
                 this.$router.push('/')
+                window.location.reload()
         } catch (e) {
         }
     },

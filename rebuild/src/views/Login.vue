@@ -61,9 +61,10 @@ export default {
             baseURL + "/auth/login",
             { username: this.username, password: this.password }
           );
-          const token1 = res.data;
+          const token1 = res.data.token;
           localStorage.setItem("token", token1);
           this.$router.push("/home");
+          window.location.reload()
         } catch (e) {}
       }
     },

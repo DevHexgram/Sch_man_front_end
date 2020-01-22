@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     async addDailyAffair() {
-      console.log(1);
       try {
         this.showAdd = false;
         this.dis = true;

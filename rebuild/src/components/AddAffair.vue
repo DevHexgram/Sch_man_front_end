@@ -109,9 +109,6 @@ export default {
 
       this.tempAffair.deadline = y + "-" + m + "-" + d + " " + h + ":" + minute;
     },
-    temp() {
-      console.log(1)
-    }
   }
 };
 </script>

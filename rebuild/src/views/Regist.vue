@@ -66,7 +66,6 @@ export default {
                 {username: this.username, password: this.password, code: this.code}
                 )
                 const token = res.data.token
-                //console.log(token)
                 localStorage.setItem("token",token)
                 alert("注册成功")
                 this.$router.push('/')

@@ -109,6 +109,7 @@ form {
 .circle_button {
   width: 50px;
   height: 50px;
+  border: 1px solid #979797;
   border-radius: 50px;
   background: #66ccff;
   font-size: 10px;

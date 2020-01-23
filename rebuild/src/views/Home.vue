@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       active: 2,
-      backGround: "url(http://localhost:12210/backgroundImage)",
+      backGround: "url(http://www.sweetbeecr.com:12210/backgroundImage)",
       //https://s0.xinger.ink/fj/fjurl.php
       //https://s0.xinger.ink/acgimg/acgurl.php
       ckey: 1

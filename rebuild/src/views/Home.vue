@@ -1,5 +1,5 @@
 <template>
-  <div class="inner" :style="{ background: backGround }" :key="ckey" id="home">
+  <div class="inner" :style="{ background: backGround , 'background-size': 'cover'}" :key="ckey" id="home">
     <van-tabs
       v-model="active"
       swipeable
@@ -54,13 +54,13 @@ export default {
   data() {
     return {
       active: 2,
-      backGround: "url(https://s0.xinger.ink/acgimg/acgurl.php)",
+      backGround: "url(http://localhost:12210/backgroundImage)",
       //https://s0.xinger.ink/fj/fjurl.php
       //https://s0.xinger.ink/acgimg/acgurl.php
       ckey: 1
     };
   },
-  
+
   methods: {
     logout: function() {
         localStorage.removeItem("token")

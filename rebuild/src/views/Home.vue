@@ -1,5 +1,5 @@
 <template>
-  <div class="inner" :style="{ background: backGround , 'background-size': 'cover'}" :key="ckey" id="home">
+  <div class="inner"  :key="ckey" id="home">
     <van-tabs
       v-model="active"
       swipeable
@@ -25,8 +25,6 @@
         </slot>
       </van-tab>
     </van-tabs>
-    <changeBG />
-    <button type="info" v-on:click="logout">登出</button>
   </div>
 </template>
 
@@ -34,7 +32,6 @@
 // @ is an alias to /src
 import DailyAffairs from "@/components/DailyAffairs.vue";
 import Affairs from "@/components/Affairs";
-import changeBG from "@/components/ChangeBG";
 
 export default {
   name: "home",
@@ -42,7 +39,6 @@ export default {
   components: {
     DailyAffairs,
     Affairs,
-    changeBG
   },
   async created() {
       const token = localStorage.getItem("token");
@@ -62,10 +58,6 @@ export default {
   },
 
   methods: {
-    logout: function() {
-        localStorage.removeItem("token")
-        this.$router.push('/')
-    }
   }
 };
 </script>
@@ -78,5 +70,6 @@ export default {
   align-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: auto;
 }
 </style>

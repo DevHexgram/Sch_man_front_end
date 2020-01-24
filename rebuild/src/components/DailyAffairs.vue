@@ -38,7 +38,6 @@ export default {
     };
   },
   created() {
-    console.log(2)
     this.getDailyAffairs();
   },
   methods: {

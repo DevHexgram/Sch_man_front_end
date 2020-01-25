@@ -4,6 +4,7 @@ const ApiErrorMsg = data => {
     const err = data.error;
     switch (err) {
         case 30200: return '您的登录已过期，请重新登录'
+        case 30210: return '服务变动，请重新登陆'
         case 40000: return '您填写的格式有错误，请检查后再试'
         case 40010: return '未知错误，请与我们联系'
         case 40020: return '未知错误，请与我们联系'

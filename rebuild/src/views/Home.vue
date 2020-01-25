@@ -32,6 +32,7 @@
 // @ is an alias to /src
 import DailyAffairs from "@/components/DailyAffairs.vue";
 import Affairs from "@/components/Affairs";
+import {baseURL} from "../main";
 
 export default {
   name: "home",
@@ -50,7 +51,7 @@ export default {
   data() {
     return {
       active: 2,
-      backGround: "url(http://www.sweetbeecr.com:12210/backgroundImage)",
+      backGround: "url("+baseURL+"/backgroundImage)",
       //https://s0.xinger.ink/fj/fjurl.php
       //https://s0.xinger.ink/acgimg/acgurl.php
       ckey: 1

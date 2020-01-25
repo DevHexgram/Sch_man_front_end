@@ -26,7 +26,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 .content {
   flex: 1;
@@ -52,6 +52,7 @@ img {
 
 <script>
 import changeBG from "@/components/ChangeBG";
+import {baseURL} from "./main";
 export default {
   components: {
     changeBG,
@@ -59,7 +60,7 @@ export default {
   data() {
     return {
       isLogin: false,
-      backGround: "url(http://www.sweetbeecr.com:12210/backgroundImage)"
+      backGround: "url("+baseURL+"/backgroundImage)"
     };
   },
   async created() {

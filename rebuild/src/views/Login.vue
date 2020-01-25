@@ -76,9 +76,6 @@ export default {
 </script>
 
 <style>
-p {
-  font-size: 2px
-}
 form {
   display: flex;
   align-items: center;

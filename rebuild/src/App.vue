@@ -59,7 +59,7 @@ export default {
   data() {
     return {
       isLogin: false,
-      backGround: "url(http://www.sweetbeecr.com:12210/backgroundImage)"
+      backGround: "url(http://www.sweetbeecr.com:1221/backgroundImage)"
     };
   },
   async created() {

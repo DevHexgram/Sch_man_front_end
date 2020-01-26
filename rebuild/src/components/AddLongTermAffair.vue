@@ -4,8 +4,8 @@
       :value="show"
       @input="handleInput"
       position="top"
-      style="border-radius: 0 0 15px 15px; background-color: rgba(0.7,0.7,0.7,0.3)"
-      :style="{ height: '45%' }"
+      style="border-radius: 0 0 15px 15px"
+      :style="{ height: '65%' }"
     >
       <div style="background-color: rgba(0,0,0,0)">
         <form>
@@ -22,12 +22,21 @@
           />
 
           <van-row>
-            <van-col span="6" offset="3">
+            <!-- <van-col span="6" offset="3">
               <van-button plain type="info" v-on:click="() => show = false">返回</van-button>
             </van-col>
             <van-col span="6" offset="7">
               <van-button plain type="primary" v-on:click="addDailyAffair(tempAffair.id)" v-bind:disabled="dis">提交</van-button>
-            </van-col>
+            </van-col> -->
+            <van-button plain hairline type="primary" v-on:click="() => show = false" style="margin-right: 3em">返回</van-button>
+            <van-button
+              plain
+              hairline
+              type="info"
+              v-on:click="addDailyAffair()"
+              v-bind:disabled="dis"
+              style="margin-left: 3em"
+            >提交</van-button>
           </van-row>
         </form>
       </div>
@@ -90,7 +99,7 @@ export default {
         );
         this.dis = false;
         window.location.reload();
-      } catch (e) {}
+      } catch (e) {this.dis = false;}
     },
     handleInput(value) {
       this.$emit("input", value);

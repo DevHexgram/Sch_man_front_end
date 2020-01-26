@@ -5,7 +5,7 @@
       @input="handleInput"
       position="top"
       style="border-radius: 0 0 15px 15px"
-      :style="{ height: '45%' }"
+      :style="{ height: '65%' }"
     >
       <div style="background-color: rgba(0,0,0,0)">
         <form>
@@ -20,14 +20,16 @@
             type="textarea"
             v-on:click="() => showTimePacker=true"
           />
-
           <van-row>
-            <van-col span="6" offset="3">
-              <van-button plain type="info" v-on:click="() => show = false">返回</van-button>
-            </van-col>
-            <van-col span="6" offset="7">
-              <van-button plain type="primary" v-on:click="addDailyAffair()" v-bind:disabled="dis">提交</van-button>
-            </van-col>
+            <van-button plain hairline type="primary" v-on:click="() => show = false" style="margin-right: 3em">返回</van-button>
+            <van-button
+              plain
+              hairline
+              type="info"
+              v-on:click="addDailyAffair()"
+              v-bind:disabled="dis"
+              style="margin-left: 3em"
+            >提交</van-button>
           </van-row>
         </form>
       </div>
@@ -61,7 +63,7 @@ export default {
       currentDate: new Date(),
       minDate: new Date(),
       maxDate: new Date(2023, 0, 1),
-      dis: false,
+      dis: false
     };
   },
   watch: {
@@ -90,7 +92,7 @@ export default {
         alert("提交成功");
         this.dis = false;
         window.location.reload();
-      } catch (e) {}
+      } catch (e) {this.dis = false;}
     },
     handleInput(value) {
       this.$emit("input", value);
@@ -108,7 +110,7 @@ export default {
       //   second = minute < 10 ? "0" + second : second;
 
       this.tempAffair.deadline = y + "-" + m + "-" + d + " " + h + ":" + minute;
-    },
+    }
   }
 };
 </script>

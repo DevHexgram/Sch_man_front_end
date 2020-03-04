@@ -1,16 +1,30 @@
 <template>
   <div class="outter box" :style="{ background: backGround , 'background-size': 'cover'}">
     <router-view style="content" />
-    <div v-show="isLogin"><changeBG /></div>
-    <div v-show="isLogin" class="footer">
-      <div class="nav" v-on:click="goToAffair"><img src="./assets/affair.png" ></div>
-      <div class="nav" v-on:click="goToMore"><img src="./assets/more.png" ></div>
-      <div class="nav" v-on:click="goToSet"><img src="./assets/setting.jpg" ></div>
+    <div v-show="isLogin" class="footer" style="padding: 0px">
+      <div class="icon is-large nav" v-on:click="goToAffair">
+        <i class="fa fa-address-book-o"></i>
+        <p>事务</p>
+      </div>
+      <div class="icon is-large nav" v-on:click="goToMore">
+        <i class="fa fa-home"></i>
+        <p>更多</p>
+      </div>
+      <div class="icon is-large nav" v-on:click="goToSet">
+        <i class="fa fa-bar-chart"></i>
+        <p>设置</p>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
+p {
+  padding: 0px;
+  margin: 0px;
+  line-height: 10px;
+  font-size: 10px;
+}
 img {
   width: 50%;
   height: 100%;
@@ -32,11 +46,14 @@ img {
   flex: 1;
 }
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 50px;
-  max-height: 50px;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   padding: 0px;
   margin: 0px;
   background: #fff;
@@ -44,23 +61,22 @@ img {
 .nav {
   flex: 1; /*等分*/
   text-align: center;
-  background: inherit;
+  background: #fff;
   padding: 0px;
   margin: 0px;
 }
 </style>
 
 <script>
-import changeBG from "@/components/ChangeBG";
-import {baseURL} from "./main";
+// import changeBG from "@/components/ChangeBG";
 export default {
   components: {
-    changeBG,
+    // changeBG
   },
   data() {
     return {
       isLogin: false,
-      backGround: "url("+baseURL+"/backgroundImage)"
+      backGround: "url(http://www.sweetbeecr.com:1221/backgroundImage)"
     };
   },
   async created() {
@@ -70,17 +86,17 @@ export default {
   },
   methods: {
     goToAffair() {
-      this.$router.push('/home')
-      window.location.reload()
+      this.$router.push("/home");
+      window.location.reload();
     },
     goToMore() {
-      this.$router.push('/more')
-      window.location.reload()
+      this.$router.push("/more");
+      window.location.reload();
     },
     goToSet() {
-      this.$router.push('/setting')
-      window.location.reload()
-    },
+      this.$router.push("/setting");
+      window.location.reload();
+    }
   }
 };
 </script>

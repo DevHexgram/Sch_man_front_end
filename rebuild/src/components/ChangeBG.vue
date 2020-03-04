@@ -1,6 +1,6 @@
 <template>
   <div class="my_div">
-    <van-button type="info" v-on:click="sendDataToParent" style="margin: 10px" >更换背景</van-button>
+    <van-button type="info" v-on:click="sendDataToParent" style="margin: 0px, padding: 0px" >更换背景</van-button>
   </div>
 </template>
 

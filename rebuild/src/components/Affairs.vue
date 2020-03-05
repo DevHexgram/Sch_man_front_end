@@ -32,7 +32,7 @@
         </van-row>
 
         <!--        以下是用于展示的弹出层中的内容-->
-        <van-popup v-model="showDetail" position="top" :style="{ height: '55%' }">
+        <van-popup v-model="showDetail" position="top" :style="{ height: '55%' }" get-container="body" >
             <div>
                 <van-field :value="tempAffair.title" label="事务" rows="2" autosize disabled type="textarea"/>
                 <van-field

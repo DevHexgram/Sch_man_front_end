@@ -1,7 +1,4 @@
 module.exports = {
-    css: {
-        extract: false
-    },
     chainWebpack: config => {
         config.module.rule('md')
           .test(/\.md/)
@@ -14,5 +11,6 @@ module.exports = {
             raw: true
           })
       },
+
     publicPath: './'
 }

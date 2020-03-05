@@ -3,6 +3,7 @@
     <van-tabs
       v-model="active"
       swipeable
+      animated
       style="
                 width: 100%;
                 height: 100%;
